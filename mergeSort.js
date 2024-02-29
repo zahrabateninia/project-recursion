@@ -1,31 +1,11 @@
 #!/usr/bin/env node
-// Pseudocode:
-// if(l<r)
-//     mid = l+r/2
-//     mergeSort(l, mid)
-//     mergeSort(mid+1, h)
-//     merge(l,mid, h)
-//     in which l is the lowest and h is the highest elements of array
 
-// Merges two subarrays of array[].
-// First subarray is arr[begin..mid]
-// Second subarray is arr[mid+1..end]
-function merge(){
-    
-
-}
-
-function mergeSort(arr, l, h){
-    if(l>=h){
-        return;
+function mergeSort(arr) {
+    if(arr.length < 2){
+        return arr
     }
-    let mid = parseInt((r-l)/2) //middle of the array
-    mergeSort(arr, l, mid)
-    mergeSort(arr, mid+1, h)
-
-
-}
-
-function printSortedArray(){
-
+    let mid = Math.floor(arr.length/2)
+    let leftArr = arr.slice(0, mid) // form the first index to mid-1
+    let rightArr = arr.slice(mid) // from middle to the end of the array
+    return mergeSort(mergeSort(leftArr), mergeSort(rightArr))
 }
