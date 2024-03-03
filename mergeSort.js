@@ -1,11 +1,19 @@
 #!/usr/bin/env node
 
-function mergeSort(arr) {
-    if(arr.length < 2){
-        return arr
+// From the pseudocode of Introduction To Algorithm book page 46
+
+function mergeSort(A, p, r){ // A[p:r]
+    // Zero or one element
+    if(p >= r){
+        return
     }
-    let mid = Math.floor(arr.length/2)
-    let leftArr = arr.slice(0, mid) // form the first index to mid-1
-    let rightArr = arr.slice(mid) // from middle to the end of the array
-    return mergeSort(mergeSort(leftArr), mergeSort(rightArr))
+
+    // Midpoint of A
+    let q = Math.floor(p+r/2);
+    // Recursively sort A[p:q]
+    mergeSort(A, p, q)
+    //  Recursively sort A[q+1:r]
+    mergeSort(A, q+1, r)
+    // Merge A[p:q] and A[q+1:r]
+    merge(A,p,q,r)
 }
