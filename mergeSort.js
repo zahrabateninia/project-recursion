@@ -50,7 +50,18 @@ function merge(A, p, q, r){
         }
         k+=1;
     }
-    // 
+    // Having gone through one of arrLeft and arrRight entirely, copy the 
+    //  remainder of the other to the end of A[p:r]
+    while(i<nL){
+        A[k]=arrLeft[i]
+        i =+1
+        k+=1
+    }
+    while(j<nR){
+        A[k]= arrRight[j]
+        j+=1
+        k+=1
+    }
 
     
 }
