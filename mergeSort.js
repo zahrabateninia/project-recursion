@@ -65,3 +65,8 @@ function merge(A, p, q, r){
 
     
 }
+
+// Test
+
+let result = mergeSort([1,4,6,2,5,9,0],0, 6)
+console.log(result)
